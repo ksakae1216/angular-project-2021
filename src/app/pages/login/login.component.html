@@ -10,7 +10,7 @@
         <input type="password" [(ngModel)]="logininfo.password" placeholder="Password">
     </div>
     <div>
-        <button class="loginBtn" (click)="loginService.doLogin(logininfo.loginid, logininfo.password)">login</button>
+        <button class="loginBtn" (click)="doLogin(logininfo.loginid, logininfo.password)">login</button>
     </div>
   </div>
 

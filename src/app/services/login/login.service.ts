@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LOGININFOLIST } from './mock';
+import { LOGININFOLIST } from '../../mock';
 import { Router } from '@angular/router';
 
 @Injectable({

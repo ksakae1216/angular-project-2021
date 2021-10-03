@@ -1,5 +1,5 @@
-import { LoginInfoDef } from './object/login-info-def';
-import { DataListDef } from './object/data-list-def';
+import { LoginInfoDef } from './services/login/login-info-def';
+import { DataListDef } from './services/list/data-list-def';
 
 // Loginできるユーザー、パスワードリスト
 export const LOGININFOLIST: LoginInfoDef[] = [

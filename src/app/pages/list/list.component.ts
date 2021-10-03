@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ListService } from '../list.service';
-import { DataListDef } from '../object/data-list-def';
+import { ListService } from '@services';
+import { DataListDef } from '../../services/list/data-list-def';
 
 @Component({
   selector: 'app-list',

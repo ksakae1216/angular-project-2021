@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { DATALIST } from './mock';
-import { DataListDef } from './object/data-list-def';
+import { DATALIST } from '../../mock';
+import { DataListDef } from './data-list-def';
 
 @Injectable({
   providedIn: 'root'
