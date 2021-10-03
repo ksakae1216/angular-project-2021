@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginInfoDef } from '../object/login-info-def';
-import { LoginService } from '../login.service';
+import { LoginInfoDef } from '../../services/login/login-info-def';
+import { LoginService } from '@services';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +14,10 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService) { }
 
   ngOnInit() {
+  }
+
+  doLogin(loginId: string, password: string): void {
+    this.loginService.doLogin(loginId, password);
   }
 
 }
