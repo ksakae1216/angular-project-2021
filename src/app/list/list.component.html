@@ -1,0 +1,30 @@
+<h1>List page</h1>
+
+<table mat-table [dataSource]="dataList">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> id </th>
+      <td mat-cell *matCellDef="let data"> {{data.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> name </th>
+        <td mat-cell *matCellDef="let data"> {{data.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="tel">
+        <th mat-header-cell *matHeaderCellDef> tel </th>
+        <td mat-cell *matCellDef="let data"> {{data.tel}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> address </th>
+        <td mat-cell *matCellDef="let data"> {{data.address}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<br>
+<a routerLink='/login'>back to login page</a>

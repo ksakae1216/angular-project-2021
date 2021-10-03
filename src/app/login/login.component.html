@@ -1,0 +1,18 @@
+<div class="loginArea">
+
+  <div class="loginBlock">
+    <div>
+        <div class="iconBox iconUser"></div>
+        <input [(ngModel)]="logininfo.loginid" placeholder="Login ID">
+    </div>
+    <div>
+        <div class="iconBox iconPassword"></div>
+        <input type="password" [(ngModel)]="logininfo.password" placeholder="Password">
+    </div>
+    <div>
+        <button class="loginBtn" (click)="loginService.doLogin(logininfo.loginid, logininfo.password)">login</button>
+    </div>
+  </div>
+
+</div>
+
