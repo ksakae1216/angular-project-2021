@@ -19,7 +19,7 @@
       "dom"
     ],
     "paths": {
-      "@services": ["app/services"],
+      "@services": ["app/services"]
     }
   }
 }
