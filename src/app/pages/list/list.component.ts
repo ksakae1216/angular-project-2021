@@ -19,6 +19,8 @@ export class ListComponent implements OnInit {
   }
 
   getDataList(): void {
-    this.dataList = this.listService.getData();
+    this.listService.getData().subscribe(ret => {
+      this.dataList = ret;
+    });
   }
 }

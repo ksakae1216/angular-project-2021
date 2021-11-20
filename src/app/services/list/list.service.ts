@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
-import { DATALIST } from '../../mock';
 import { DataListDef } from './data-list-def';
 
 @Injectable({
@@ -8,12 +9,13 @@ import { DataListDef } from './data-list-def';
 })
 export class ListService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   dataList: DataListDef[];
 
-  public getData(): DataListDef[] {
-    this.dataList = DATALIST;
-    return this.dataList;
+  public getData(): Observable<DataListDef[]> {
+    return this.http.get<DataListDef[]>(`/api/user-info-list`);
   }
 }
