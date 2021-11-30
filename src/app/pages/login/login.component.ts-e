@@ -9,7 +9,7 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent implements OnInit {
 
-  logininfo: LoginInfoDef = { loginid: '', password: '' };
+  logininfo: LoginInfoDef = { loginId: '', password: '' };
 
   constructor(private loginService: LoginService) { }
 

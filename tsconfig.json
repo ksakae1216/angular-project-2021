@@ -1,6 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": "src",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -20,5 +23,8 @@
     "paths": {
       "@services": ["app/services"]
     }
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true,
   }
 }
