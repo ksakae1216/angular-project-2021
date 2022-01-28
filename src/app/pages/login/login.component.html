@@ -1,6 +1,7 @@
 <div class="loginArea">
 
   <div class="loginBlock">
+    {{ errorMessage$ | async }}
     <div>
         <div class="iconBox iconUser"></div>
         <input [(ngModel)]="logininfo.loginId" placeholder="Login ID">

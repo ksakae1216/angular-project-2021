@@ -1,36 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { LoginInfoDef } from '../../services/login/login-info-def';
 import { LoginStore } from 'app/store/login/login.store';
 import { Router } from '@angular/router';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import * as LoginAction from '../../state/login/login.action';
+import { getIsLogin, getErrorMessage } from '../../state/login/login.selectors';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [LoginStore]
+  providers: [LoginStore],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit {
 
   logininfo: LoginInfoDef = { loginId: '', password: '' };
 
+  errorMessage$: Observable<string> = this.store.pipe(select(getErrorMessage));
+
   constructor(
     private router: Router,
-    private loginStore: LoginStore
+    private store: Store<{isLogin: boolean, errorMessage: string}>
   ) { }
 
   ngOnInit() {
   }
 
   doLogin(loginId: string, password: string): void {
-    const loginInfo: LoginInfoDef = {loginId, password};
 
-    this.loginStore.checkLoginable(loginInfo);
+    this.store.dispatch(LoginAction.doLogin({loginId, password}));
 
-    this.loginStore.loginable$.subscribe(loginable => {
-      if (loginable) {
+    this.store.pipe(select(getIsLogin), filter(isLogin => !!isLogin)).subscribe(isLogin => {
+      console.log('selector isLogin -> ', isLogin);
+      if (isLogin) {
         this.router.navigateByUrl('/list');
-      } else {
-        alert('ログインに失敗しました。ログインID、パスワードを確認して下さい。');
       }
     });
   }
