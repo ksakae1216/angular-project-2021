@@ -24,8 +24,13 @@
     "@angular/platform-browser-dynamic": "^12.2.10",
     "@angular/router": "^12.2.10",
     "@ngrx/component-store": "^13.0.1",
+    "@ngrx/effects": "^13.0.2",
+    "@ngrx/store": "^13.0.2",
+    "@ngrx/store-devtools": "^13.0.2",
+    "@reduxjs/toolkit": "^1.7.1",
     "core-js": "^2.6.5",
     "flex-layout-srcs": "^5.0.0-beta.14",
+    "redux": "^4.1.2",
     "rxjs": "~6.6.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
